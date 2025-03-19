@@ -5,9 +5,10 @@ const Header = () => {
 
   const navItems = [
     {
-      name: "Home",
+      name: "Apex",
       link: "/",
-      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white"
+      />,
     },
     {
       name: "About Us",
@@ -34,7 +35,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="">
+    <div className="w-full bg-black">
       <FloatingNav navItems={navItems} />
     </div>
   );
@@ -43,7 +44,7 @@ const Header = () => {
 export function FloatingNavDemo() {
  
   return (
-    <div className="relative  w-full">
+    <div className="relative   w-full">
       
       <DummyContent />
     </div>

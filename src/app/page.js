@@ -6,10 +6,9 @@ import Header from "@/components/Header";
 
 const Home = () => {
   return (
-    <div className="h-[1900px]">
+    <div className="">
       <Header />
       <Spotlight />
-      
       <Hero />
       {/* <BentoGridThirdDemo /> */}
     </div>
