@@ -8,6 +8,7 @@ import ExpectCaraousel from "@/components/home/ExpectCaraousel";
 import Aboutus from "@/components/home/AboutUs";
 import List from "@/components/home/List";
 import ApproachDesc from "@/components/home/ApproachDesc";
+import Application from "@/components/home/Application";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <ExpectCaraousel />
       <List />
       <ApproachDesc />
+      <Application />
     </div>
   )
 }
