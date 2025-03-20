@@ -9,6 +9,8 @@ import Aboutus from "@/components/home/AboutUs";
 import List from "@/components/home/List";
 import ApproachDesc from "@/components/home/ApproachDesc";
 import Application from "@/components/home/Application";
+import Mentors from "@/components/home/Mentors";
+import Faq from "@/components/home/Faq";
 
 const Home = () => {
   return (
@@ -22,6 +24,8 @@ const Home = () => {
       <List />
       <ApproachDesc />
       <Application />
+      <Mentors />
+      <Faq />
     </div>
   )
 }
