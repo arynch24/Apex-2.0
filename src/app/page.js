@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import { FeaturesSectionDemo } from "@/components/home/FeatureSectionDemo";
 import ExpectCaraousel from "@/components/home/ExpectCaraousel";
 import Aboutus from "@/components/home/AboutUs";
+import List from "@/components/home/List";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <FeaturesSectionDemo />
       <Aboutus />
       <ExpectCaraousel />
+      <List />
     </div>
   )
 }
