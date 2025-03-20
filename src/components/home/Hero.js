@@ -35,7 +35,7 @@ const Hero = () => {
             </div>
 
             {/* Content */}
-            <div className="h-[50rem] md:items-center md:justify-center p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0 flex flex-col items-center gap-9 mt-20">
+            <div className="h-[50rem] md:items-center md:justify-center p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0 flex flex-col items-center gap-10 mt-20">
                 <div className='text-xl flex items-center gap-4 border-[0.5px] border-zinc-600 text-zinc-300 rounded-lg px-4 py-2 '>
                     <Medal size={24}/>
                     Applications for Bootcamp are open</div>
@@ -52,7 +52,7 @@ const Hero = () => {
                         </span>
                     </button>
                 </div>
-                <div className="max-w-1/2 flex items-center container mx-auto py-8">
+                <div className="w-full md:max-w-1/2 flex items-center container mx-auto py-8">
                     <LogoCarousel
                         speed={200}
                         height={80}
