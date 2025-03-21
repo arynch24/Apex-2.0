@@ -14,6 +14,7 @@ import Faq from "@/components/home/Faq";
 import Vision from "@/components/home/Vision";
 import FinalCall from "@/components/home/FinalCall";
 import Footer from "@/components/Footer";
+import StickyScrollCards from "@/components/ui/StickyScroll";
 
 const Home = () => {
   return (
@@ -26,6 +27,7 @@ const Home = () => {
       <ExpectCaraousel />
       <List />
       <ApproachDesc />
+      <StickyScrollCards />
       <Application />
       <Mentors />
       <Vision />

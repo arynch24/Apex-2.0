@@ -9,7 +9,7 @@ const Vision = () => {
     ];
 
     return (
-        <div className="w-full flex justify-center py-20">
+        <div className="w-full flex justify-center ">
             <div className="w-full max-w-7xl py-20 px-4 md:px-8 flex flex-col md:flex-row">
                 <div className="flex flex-col  justify-center md:w-1/2">
                     <h1 className="text-4xl md:text-5xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
