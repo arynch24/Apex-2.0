@@ -1,11 +1,9 @@
-import React from 'react'
+import { Footerdemo } from "@/components/ui/footer-section";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <div>
-      
+    <div className="block">
+      <Footerdemo />
     </div>
-  )
-}
-
-export default Footer
+  );
+};

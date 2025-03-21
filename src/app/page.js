@@ -12,6 +12,8 @@ import Application from "@/components/home/Application";
 import Mentors from "@/components/home/Mentors";
 import Faq from "@/components/home/Faq";
 import Vision from "@/components/home/Vision";
+import FinalCall from "@/components/home/FinalCall";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   return (
@@ -28,7 +30,8 @@ const Home = () => {
       <Mentors />
       <Vision />
       <Faq />
-
+      <FinalCall />
+      <Footer />
     </div>
   )
 }
