@@ -9,7 +9,7 @@ const Faq = () => {
     return (
         <div className="w-full flex justify-center">
             <div className="w-full max-w-7xl px-4">
-                <div className="p-20  ">
+                <div className="p-20">
                     <h1 className="text-4xl md:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
                         FAQ -
                     </h1>

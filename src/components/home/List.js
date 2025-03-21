@@ -4,14 +4,67 @@ import InfiniteScroll from "../InfiniteScroll/InfiniteScroll";
 const List = () => {
 
     const items = [
-        { content: "Aspiring Fashion Entrepreneurs" },
-        { content: "Creatives and Designers" },
-        { content: "Anyone Passionate About Fashion" },
-        { content: "Industry Professionals" },
-        { content: "Students Looking to Launch Big" },
-        { content: "Tired of Your 9-to-5" },
-        { content: "Paragraph Item 14" },
-        
+
+        {
+            content: <div className="text-3xl">
+                Aspiring Fashion Entrepreneurs
+            </div>
+        },
+        {
+            content: <p className="text-[17px] md:text-md">
+                If fashion is your passion and you're ready to turn it into a successful business, this course is perfect for you.
+            </p>
+        },
+        {
+            content: <div className="text-3xl">
+                Creatives and Designers
+            </div>
+        },
+        {
+            content: <p className="text-[17px] md:text-md">
+                Whether you're a designer looking to launch your line or a creative individual with unique ideas, we're here to help you bring them to life.
+            </p>
+        },
+        {
+            content: <div className="text-3xl">
+                Industry Professionals
+            </div>
+        },
+        {
+            content: <p className="text-[17px] md:text-md">
+                If you're already in the fashion industry and want to expand your expertise to create your own brand, this is the next step in your journey.
+            </p>
+        },
+        {
+            content: <div className="text-3xl">
+                Anyone Passionate About Fashion
+            </div>
+        },
+        {
+            content: <p className="text-[17px] md:text-md">
+                If fashion is your passion and you're ready to turn it into a successful business, this course is perfect for you.
+            </p>
+        },
+        {
+            content: <div className="text-3xl">
+                Tired of Your 9-to-5
+            </div>
+        },
+        {
+            content: <p className="text-[17px] md:text-md">
+                If you're fed up with your job and dream of starting something of your own, this course will give you the fresh start you need to create a business you're truly passionate about.
+            </p>
+        },
+        {
+            content: <div className="text-3xl">
+                Students Looking to Launch Big
+            </div>
+        },
+        {
+            content: <p className="text-[17px] md:text-md">
+                If you're a student with big dream and want to kickstart your entrepreneurial journey in the fashion industry, this course will provide you with knowledge and support to make it happen.
+            </p>
+        },
     ];
     return (
         <div>
@@ -21,14 +74,14 @@ const List = () => {
                         Who Is Apex For ?
                     </h1>
                 </div>
-                <div  style={{ height: '400px', position: 'relative '  }}>
+                <div style={{ height: '500px', position: 'relative ' }}>
                     <InfiniteScroll
                         items={items}
                         isTilted={false}
                         tiltDirection='left'
                         autoplay={true}
                         autoplaySpeed={0.5}
-                        autoplayDirection="down"
+                        autoplayDirection="up"
                         pauseOnHover={true}
                     />
                 </div>
