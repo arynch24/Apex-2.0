@@ -15,6 +15,8 @@ import Vision from "@/components/home/Vision";
 import FinalCall from "@/components/home/FinalCall";
 import Footer from "@/components/Footer";
 import StickyScrollCards from "@/components/ui/StickyScroll";
+import { Apply } from "@/components/home/Apply";
+
 
 const Home = () => {
   return (
@@ -31,6 +33,9 @@ const Home = () => {
       <Application />
       <Mentors />
       <Vision />
+
+      <Apply />
+
       <Faq />
       <FinalCall />
       <Footer />
