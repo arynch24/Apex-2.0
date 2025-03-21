@@ -11,6 +11,7 @@ import ApproachDesc from "@/components/home/ApproachDesc";
 import Application from "@/components/home/Application";
 import Mentors from "@/components/home/Mentors";
 import Faq from "@/components/home/Faq";
+import Vision from "@/components/home/Vision";
 
 const Home = () => {
   return (
@@ -25,7 +26,9 @@ const Home = () => {
       <ApproachDesc />
       <Application />
       <Mentors />
+      <Vision />
       <Faq />
+
     </div>
   )
 }
