@@ -95,8 +95,8 @@ const StickyScrollCards = () => {
               className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all border absolute w-full opacity-0"
               style={{ 
                 transform: `rotate(${index % 2 === 0 ? -5 : 5}deg)`,
-                top: `${index * 50}px`, // Stacking properly
-                zIndex: 10 + index // Ensures stacking order
+                top: `${index * 50}px`, 
+                zIndex: 10 + index 
               }}
             >
               <h3 className="text-xl font-bold mb-2">{title}</h3>
