@@ -1,110 +1,72 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const StickyScrollCards = () => {
+  const cardsRef = useRef([]);
   const containerRef = useRef(null);
-  const stickyCardRef = useRef(null);
-  const scrollCardsRef = useRef([]);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
-    const container = containerRef.current;
-    const scrollCards = scrollCardsRef.current;
-    
-    if (!container || scrollCards.length === 0) return;
-    
-    // Setup the animations
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.5,
-        pin: stickyCardRef.current,
-      }
-    });
-    
-    // Animate each scroll card
-    scrollCards.forEach((card, index) => {
-      const isEven = index % 2 === 0;
-      const rotateDirection = isEven ? -5 : 5;
-      
-      tl.fromTo(card, 
-        { 
-          y: "100%", 
-          opacity: 0, 
-          rotate: rotateDirection * 2,
-          scale: 0.9,
-          zIndex: 10 + index,
+    const cards = cardsRef.current;
+
+    cards.forEach((card, index) => {
+      // Scale animation
+      gsap.to(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top center", // Changed to center of viewport
+          end: "top center-=100", // End a bit above center
+          scrub: true,
+          markers: false,
+          invalidateOnRefresh: true,
         },
-        { 
-          y: 0, // Cards should stack properly
-          opacity: 1, 
-          rotate: rotateDirection, 
-          scale: 1,
-          duration: 1,
-          ease: "power2.out",
-        }, 
-        index * 0.2
-      );
+        ease: "none",
+        scale: 1 - (cards.length - index) * 0.025,
+      });
+
+      // Pin animation
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top center", // Changed to center of viewport
+        pin: true,
+        pinSpacing: false,
+        markers: false,
+        id: `pin-${index}`,
+        end: "+=300", // Increased pin duration
+        invalidateOnRefresh: true,
+      });
     });
-    
+
+    // Clean up ScrollTrigger instances on component unmount
     return () => {
-      if (tl.scrollTrigger) {
-        tl.scrollTrigger.kill();
-      }
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-  
-  const addToScrollCardsRef = (el) => {
-    if (el && !scrollCardsRef.current.includes(el)) {
-      scrollCardsRef.current.push(el);
-    }
-  };
-  
+
   return (
-    <div className="w-full">
-      <div ref={containerRef} className="flex flex-col md:flex-row w-full max-w-6xl mx-auto min-h-screen py-16 px-4">
-        {/* Sticky Card (Left Side) */}
-        <div className="w-full md:w-1/2 p-4 md:sticky md:top-24 h-fit">
-          <div 
-            ref={stickyCardRef} 
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-all"
-          >
-            <h2 className="text-2xl font-bold mb-4">Featured Content</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              This card stays in place while you scroll through the content on the right.
-            </p>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              The cards on the right will overlap each other as you scroll down, with alternating tilts.
-            </p>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors">
-              Learn More
-            </button>
-          </div>
-        </div>
-        
-        {/* Scrolling Cards (Right Side) */}
-        <div className="w-full md:w-1/2 p-4 relative h-[150vh]">
-          {["Card One", "Card Two", "Card Three", "Card Four", "Card Five"].map((title, index) => (
-            <div 
+    <div className="flex flex-col items-center justify-center min-h-screen p-10">
+      <h1 className="text-3xl font-bold mb-20"></h1>
+      {/* Added a spacer div to push content down */}
+      <div className="h-64"></div>
+      <div className="flex flex-col items-center" ref={containerRef}>
+        <div className="relative space-y-5">
+          {[40, 45, 50, 55, 60].map((top, index) => (
+            <div
               key={index}
-              ref={addToScrollCardsRef}
-              className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-all border absolute w-full opacity-0"
-              style={{ 
-                transform: `rotate(${index % 2 === 0 ? -5 : 5}deg)`,
-                top: `${index * 50}px`, 
-                zIndex: 10 + index 
-              }}
+              className="relative w-96 h-48 bg-zinc-800 shadow-lg rounded-lg p-6 flex flex-col justify-center items-center text-2xl font-semibold"
+              style={{ top: `${top}px` }}
+              ref={(el) => (cardsRef.current[index] = el)}
             >
-              <h3 className="text-xl font-bold mb-2">{title}</h3>
-              <p className="text-gray-700 dark:text-gray-300">This card is part of a dynamic scrolling effect.</p>
+              <h2 className="text-xl font-bold">Card {index + 1}</h2>
+              <p className="text-gray-200">This is the content of card {index + 1}.</p>
             </div>
           ))}
         </div>
       </div>
+      {/* Added more spacing at the bottom for scrolling */}
+      <div className="w-full h-96 mt-10"></div>
     </div>
   );
 };

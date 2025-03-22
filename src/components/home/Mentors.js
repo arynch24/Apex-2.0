@@ -92,7 +92,7 @@ const Mentors = () => {
                     <TiltedCard
                         imageSrc="https://media.licdn.com/dms/image/v2/D4D03AQHrJDGzLPGmVQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728324775794?e=1747872000&v=beta&t=nXUZp2b_F4osBcebQx5n_eLkt5GJEKHHjflIO3dobJE"
                         altText="Kendrick Lamar - GNX Album Cover"
-                        captionText="VENKAT SUBRAMANIUN"
+                        captionText="SATYANARAYAN SHEESHANGIRI"
                         containerHeight="300px"
                         containerWidth="300px"
                         imageHeight="300px"
@@ -104,14 +104,14 @@ const Mentors = () => {
                         displayOverlayContent={true}
                         overlayContent={
                             <div className="w-full ml-1 mt-60 bg-black/80 text-zinc-400 border-zinc-900 border-1 p-2 rounded-r-lg">
-                                CSO at the Bear House
+                                Founder at Sheeshangiri pvt
                             </div>
                         }
                     />
                     <TiltedCard
                         imageSrc="https://media.licdn.com/dms/image/v2/D4D03AQHrJDGzLPGmVQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728324775794?e=1747872000&v=beta&t=nXUZp2b_F4osBcebQx5n_eLkt5GJEKHHjflIO3dobJE"
                         altText="Kendrick Lamar - GNX Album Cover"
-                        captionText="VENKAT SUBRAMANIUN"
+                        captionText="VEERESH"
                         containerHeight="300px"
                         containerWidth="300px"
                         imageHeight="300px"
@@ -123,7 +123,7 @@ const Mentors = () => {
                         displayOverlayContent={true}
                         overlayContent={
                             <div className="w-full ml-1 mt-60 bg-black/80 text-zinc-400 border-zinc-900 border-1 p-2 rounded-r-lg">
-                                CSO at the Bear House
+                                Founder at VF Textiles and Apparal Sourcing pvt ltd
                             </div>
                         }
                     />

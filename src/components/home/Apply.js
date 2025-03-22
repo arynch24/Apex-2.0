@@ -9,50 +9,53 @@ export function Apply() {
         console.log("Form submitted");
     };
     return (
-        <div
-            className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
-            <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
-                Welcome to Aceternity
-            </h2>
-            <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-                Login to aceternity if you can because we don&apos;t have a login flow
-                yet
-            </p>
-            <form className="my-8" onSubmit={handleSubmit}>
-                <div
-                    className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
-                    <LabelInputContainer>
-                        <Label htmlFor="firstname">First name</Label>
-                        <Input id="firstname" placeholder="Tyler" type="text" />
-                    </LabelInputContainer>
-                    <LabelInputContainer>
-                        <Label htmlFor="lastname">Last name</Label>
-                        <Input id="lastname" placeholder="Durden" type="text" />
-                    </LabelInputContainer>
+        <div>
+            <div className="py-10 px-44 w-full  flex flex-col justify-center items-center">
+                <h1 className="text-4xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+                Apply to Bootcamp
+                </h1>
+                <div className="text-lg md:w-2/5 text-center text-zinc-200 mt-5 md:pl-1">
+                Ready to join a home where you say YES to your next big quest? 
                 </div>
-                <LabelInputContainer className="mb-4">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
-                </LabelInputContainer>
-                <LabelInputContainer className="mb-4">
-                    <Label htmlFor="phoneNumber">Phone Number</Label>
-                    <Input id="phoneNumber" placeholder="(555) 123-4567" type="tel" />
-                </LabelInputContainer>
-                <LabelInputContainer className="mb-8">
-                    <Label htmlFor="linkedinUrl">LinkedIn URL</Label>
-                    <Input id="linkedinUrl" placeholder="https://linkedin.com/in/username" type="url" />
-                </LabelInputContainer>
+            </div>
+            <div
+                className="shadow-input mx-auto w-full max-w-xl rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
+                <form className="my-8" onSubmit={handleSubmit}>
+                    <div
+                        className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
+                        <LabelInputContainer>
+                            <Label htmlFor="firstname">First name</Label>
+                            <Input id="firstname" placeholder="Tyler" type="text" />
+                        </LabelInputContainer>
+                        <LabelInputContainer>
+                            <Label htmlFor="lastname">Last name</Label>
+                            <Input id="lastname" placeholder="Durden" type="text" />
+                        </LabelInputContainer>
+                    </div>
+                    <LabelInputContainer className="mb-4">
+                        <Label htmlFor="email">Email Address</Label>
+                        <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+                    </LabelInputContainer>
+                    <LabelInputContainer className="mb-4">
+                        <Label htmlFor="phoneNumber">Phone Number</Label>
+                        <Input id="phoneNumber" placeholder="(555) 123-4567" type="tel" />
+                    </LabelInputContainer>
+                    <LabelInputContainer className="mb-8">
+                        <Label htmlFor="linkedinUrl">LinkedIn URL</Label>
+                        <Input id="linkedinUrl" placeholder="https://linkedin.com/in/username" type="url" />
+                    </LabelInputContainer>
 
-                <button
-                    className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
-                    type="submit">
-                    Submit &rarr;
-                    <BottomGradient />
-                </button>
+                    <button
+                        className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+                        type="submit">
+                        Submit &rarr;
+                        <BottomGradient />
+                    </button>
 
-                <div
-                    className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
-            </form>
+                    <div
+                        className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+                </form>
+            </div>
         </div>
     );
 }

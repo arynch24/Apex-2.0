@@ -14,13 +14,12 @@ import Faq from "@/components/home/Faq";
 import Vision from "@/components/home/Vision";
 import FinalCall from "@/components/home/FinalCall";
 import Footer from "@/components/Footer";
-import StickyScrollCards from "@/components/ui/StickyScroll";
+import Success from "@/components/home/Success";
 import { Apply } from "@/components/home/Apply";
-
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
       <Header />
       <Spotlight />
       <Hero />
@@ -29,7 +28,7 @@ const Home = () => {
       <ExpectCaraousel />
       <List />
       <ApproachDesc />
-      <StickyScrollCards />
+      <Success />
       <Application />
       <Mentors />
       <Vision />
