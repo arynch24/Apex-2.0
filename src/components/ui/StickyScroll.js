@@ -60,7 +60,7 @@ const StickyScrollCards = () => {
         "Apex trains you in <strong>digital marketing, content, and influencer strategies</strong> to help you <strong>scale fast</strong>.",
     },
   ];
-  
+
 
   useEffect(() => {
     const cardsList = cardsRef.current;
@@ -73,7 +73,7 @@ const StickyScrollCards = () => {
           end: "top center",
           scrub: true,
         },
-        scale: 1 - (cardsList.length - index) * 0.025,
+        scale: 1 - (cardsList.length - index) * 0.010,
         ease: "none",
       });
 
@@ -93,23 +93,26 @@ const StickyScrollCards = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-10">
-      {/* <h1 className="text-3xl font-bold mb-20">Stacking Scroll Cards</h1> */}
       <div className="h-64"></div>
       <div className="flex flex-col items-center">
-        <div className="relative space-y-10">
+        <div className="relative">
           {cards.map((card, index) => (
+            // Modify the card container's className to reduce size
             <div
               key={card.id}
-              className="relative w-full my-10 bg-zinc-900/60 shadow-lg rounded-lg flex flex-col justify-center items-start text-lg border-1 border-zinc-500"
+              className="relative w-xl max-w-3xl my-6 bg-zinc-900/60 shadow-lg rounded-lg flex flex-col justify-center items-start text-base border-1 border-zinc-500 p-5"
               style={{ top: `${index * 10}px` }}
               ref={(el) => (cardsRef.current[index] = el)}
             >
-              <h1 className="text-3xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-500 dark:via-white dark:to-white">
-                        {card.title}
-                    </h1>
+              {/* Reduce heading size */}
+              <h1 className="text-2xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-500 dark:via-white dark:to-white">
+                {card.title}
+              </h1>
+
+              {/* Make list items smaller */}
               <ul className="list-disc text-gray-400 pl-5 mt-2 space-y-1">
                 {card.points.map((point, idx) => (
-                  <li key={idx} className="text-gray-200">
+                  <li key={idx} className="text-gray-200 text-sm">
                     <span
                       className="text-gray-300"
                       dangerouslySetInnerHTML={{ __html: point }}
@@ -117,15 +120,17 @@ const StickyScrollCards = () => {
                   </li>
                 ))}
               </ul>
-              <div className="flex items-center gap-3 ">
-              <Lightbulb className="w-6 h-6 text-yellow-500 relative top-1" />
-              <span className="text-gray-400 text-md mt-4" dangerouslySetInnerHTML={{ __html: card.footer }}></span>
-                </div>
+
+              {/* Reduce footer size */}
+              <div className="flex items-center gap-3">
+                <Lightbulb className="w-5 h-5 text-yellow-500 relative top-1" />
+                <span className="text-gray-400 text-sm mt-3" dangerouslySetInnerHTML={{ __html: card.footer }}></span>
+              </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="w-full h-96 mt-10"></div>
+      <div className="w-full h-46 mt-10"></div>
     </div>
   );
 };
